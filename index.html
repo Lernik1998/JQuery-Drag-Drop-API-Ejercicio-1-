@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Facturas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Generador de Facturas</h1>
+  </header>
+  <main>
+    <section id="form-section">
+      <input type="text" id="product-name" placeholder="Nombre del producto">
+      <input type="number" id="product-quantity" placeholder="Cantidad" min="1">
+      <input type="number" id="product-price" placeholder="Precio (€)" min="0.01" step="0.01">
+      <button id="add-product">Añadir Producto</button>
+      <p id="error-message" style="display: none; color: red;">Por favor, completa todos los campos.</p>
+    </section>
+    <section id="table-section">
+      <table>
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio (€)</th>
+            <th>Subtotal (€)</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="invoice-table"></tbody>
+      </table>
+    </section>
+    <section id="totals-section">
+      <p>Subtotal: <span id="subtotal">0.00</span> €</p>
+      <p>IVA (21%): <span id="iva">0.00</span> €</p>
+      <p>Total: <span id="total">0.00</span> €</p>
+    </section>
+    <section id="info-section">
+      <h2>Información del Navegador</h2>
+      <p id="browser-info"></p>
+      <p id="current-time"></p>
+    </section>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
